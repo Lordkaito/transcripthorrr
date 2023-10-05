@@ -17,6 +17,7 @@ def index():
 
 @app.route("/transcribe", methods=["POST"])
 def transcribe():
+  print(config('FRONTEND_URL'))
   audio_file = request.files.get("audio_file")
   audio_data, sr = librosa.load(audio_file)
   result = audio_transcriber.transcribe_audio(audio_data)
