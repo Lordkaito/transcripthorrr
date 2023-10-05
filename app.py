@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from modules import module1, module2
 import audio_transcriber
 import librosa
 import audio_transcriber_pro
