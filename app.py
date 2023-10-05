@@ -5,11 +5,11 @@ import audio_transcriber
 import librosa
 import audio_transcriber_pro
 from werkzeug.exceptions import RequestEntityTooLarge
+from decouple import config
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
-CORS(app, origins=["http://localhost:5173"])
-# CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, origins=[config('FRONTEND_URL')])
 
 @app.route('/')
 
